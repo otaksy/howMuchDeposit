@@ -21,6 +21,7 @@ app.use(function(req, res, next) {
 
 // error handler
 app.use(function(err, req, res, next) {
+  res.set("Contnt-Type", "application/problem+json");
   if (err.status === 500) {
     res.status(500).send("Internal Server Error.");
   }

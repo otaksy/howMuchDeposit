@@ -32,6 +32,9 @@ class HowMuchDeposit {
     if (_.isNaN(Number(this.maxAmount))) {
       throw new ParameterError("The maxAmount must be a type of Number.");
     }
+    if (this.maxAmount < 1) {
+      throw new ParameterError("The maxAmount must be a positive Number.");
+    }
     if (_.isEmpty(this.ratio)) {
       throw new ParameterError("The ratio is empty.");
     }
